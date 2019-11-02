@@ -1,0 +1,540 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>簡易營養自我評估紀錄</title>
+
+    <script type="text/javascript">
+
+var sleepp = ["1~4hr", "5~8hr", "9~12hr", "13~16hr", "17~20hr", "21~24hr"];//睡眠下拉選單的陣列
+        flen = sleepp.length;
+        text = ""
+
+
+
+        function DisHealth() {
+            var Arr1 = new Array();
+            var i = 1;
+            var j = 0;
+
+            var ai = 0;
+            var aj = 0;
+
+            if (document.getElementById("health1").checked) {
+                Arr1[ai, aj] = [document.getElementById("health1").id, document.getElementById("health1").value]
+                aj++;
+            }
+            if (document.getElementById("health2").checked) {
+                Arr1[ai, aj] = [document.getElementById("health2").id, document.getElementById("health2").value]
+                aj++;                
+            }
+            if (document.getElementById("health3").checked) {
+                Arr1[ai, aj] = [document.getElementById("health3").id, document.getElementById("health3").value]
+                aj++;
+            }
+            if (document.getElementById("health4").checked) {
+                Arr1[ai, aj] = [document.getElementById("health4").id, document.getElementById("health4").value]
+                aj++;
+            }
+            if (document.getElementById("health5").checked) {
+                Arr1[ai, aj] = [document.getElementById("health5").id, document.getElementById("health5").value]
+                aj++;
+            }
+            if (document.getElementById("health6").checked) {
+                Arr1[ai, aj] = [document.getElementById("health6").id, document.getElementById("health6").value]
+                aj++;
+            }
+            if (document.getElementById("health7").checked) {
+                Arr1[ai, aj] = [document.getElementById("health7").id, document.getElementById("health7").value]
+                aj++;
+            }
+            if (document.getElementById("health8").checked) {
+                Arr1[ai, aj] = [document.getElementById("health8").id, document.getElementById("health8").value]
+                aj++;
+            }
+            if (document.getElementById("health9").checked) {
+                Arr1[ai, aj] = [document.getElementById("health9").id, document.getElementById("health9").value]
+                aj++;
+            }
+            if (document.getElementById("health10").checked) {
+                Arr1[ai, aj] = [document.getElementById("health10").id, document.getElementById("health10").value]
+                aj++;
+            }
+            if (document.getElementById("health11").checked) {
+                Arr1[ai, aj] = [document.getElementById("health11").id, document.getElementById("health11").value]
+                aj++;
+            }
+            if (document.getElementById("health12").checked) {
+                Arr1[ai, aj] = [document.getElementById("health12").id, document.getElementById("health12").value]
+                aj++;
+            }
+            if (document.getElementById("health13").checked) {
+                Arr1[ai, aj] = [document.getElementById("health13").id, document.getElementById("health13").value]
+                aj++;
+            }
+            if (document.getElementById("health14").checked) {
+                Arr1[ai, aj] = [document.getElementById("health14").id, document.getElementById("health14").value]
+                aj++;
+            }
+            if (document.getElementById("health15").checked) {
+                Arr1[ai, aj] = [document.getElementById("health15").id, document.getElementById("health15").value]
+                aj++;
+            }
+            if (document.getElementById("health16").checked) {
+                Arr1[ai, aj] = [document.getElementById("health16").id, document.getElementById("health16").value]
+                aj++;
+            }
+            if (document.getElementById("health17").checked) {
+                Arr1[ai, aj] = [document.getElementById("health17").id, document.getElementById("health17").value]
+                aj++;
+            }
+
+            if (document.getElementById("health18").checked) {
+                Arr1[ai, aj] = [document.getElementById("health18").id, document.getElementById("health18").value]
+                aj++;
+            }
+            if (document.getElementById("health19").checked) {
+                Arr1[ai, aj] = [document.getElementById("health19").id, document.getElementById("health19").value]
+                aj++;
+            }
+            if (document.getElementById("health20").checked) {
+                Arr1[ai, aj] = [document.getElementById("health20").id, document.getElementById("health20").value]
+                aj++;
+            }
+            if (document.getElementById("health21").checked) {
+                Arr1[ai, aj] = [document.getElementById("health21").id, document.getElementById("health21").value]
+                aj++;
+            }
+            if (document.getElementById("health22").checked) {
+                Arr1[ai, aj] = [document.getElementById("health22").id, document.getElementById("health22").value]
+                aj++;
+            }
+            if (document.getElementById("health23").checked) {
+                Arr1[ai, aj] = [document.getElementById("health23").id, document.getElementById("health23").value]
+                aj++;
+            }
+            if (document.getElementById("health24").checked) {
+                Arr1[ai, aj] = [document.getElementById("health24").id, document.getElementById("health24").value]
+                aj++;
+            }
+            if (document.getElementById("health25").checked) {
+                Arr1[ai, aj] = [document.getElementById("health25").id, document.getElementById("health25").value]
+                aj++;
+            }
+            if (document.getElementById("health26").checked) {
+                Arr1[ai, aj] = [document.getElementById("health26").id, document.getElementById("health26").value]
+                aj++;
+            }
+            if (document.getElementById("health27").checked) {
+                Arr1[ai, aj] = [document.getElementById("health27").id, document.getElementById("health27").value]
+                aj++;
+            }
+            if (document.getElementById("health28").checked) {
+                Arr1[ai, aj] = [document.getElementById("health28").id, document.getElementById("health28").value]
+                aj++;
+            }
+
+            var firstRow = document.getElementById("table1").rows[i];
+            for (j = 0; j <= aj; j++) {
+            var x = firstRow.insertCell(0);
+            x.innerHTML=Arr1[0,j];
+            //x.innerHTML = Arr1[0,j],Arr1[j][0];
+            }
+        }
+
+
+
+        function BMII()//計算BMI，當身高,體重不為數字跳出警告
+        {
+            tell = + document.getElementById("m").value;
+            weight = + document.getElementById("kg").value;
+            BMI = weight / tell / tell;
+            if (tell == "" || weight == "") {
+                alert("身高或體重沒輸入東西");
+            }
+            if (isNaN(tell))//is not a number
+            {
+                alert("身高輸入的要是數字!");
+                if (isNaN(weight))//is not a number
+                {
+                    alert("體重輸入的要是數字");
+                    return false;
+                }
+                return false;
+            }
+            if (isNaN(weight))//is not a number
+            {
+                alert("體重輸入的要是數字!");
+                if (isNaN(tell))//is not a number
+                {
+                    alert("身高輸入的要是數字");
+                    return false;
+                }
+                return false;
+            }
+            alert(BMI);
+        }
+
+
+        var patient = { "name": "Chalmers", "telecom": 12345678, "gender": "male", "birthDate": "1974-12-25" };
+        function loadPatient() //當按下load Patient則填入預設好的值
+        {
+            document.myForm.姓名.value = patient.name;
+            document.myForm.電話.value = patient.telecom;
+            document.myForm.性別.value = patient.gender;
+            document.myForm.生日.value = patient.birthDate;
+        }
+        function button() {
+             telp = document.myForm.電話.value;
+             if (document.myForm.姓名.value == "")//假如姓名沒有寫
+             {
+                 alert("姓名必填寫!");
+		         if (isNaN(telp))//is not a number
+                 {
+                      alert("電話話碼輸入的要是數字!");
+                 }
+              return false;//執行完上一行後跳出
+             }
+           
+             if (isNaN(telp))//is not a number
+             {
+                alert("電話話碼輸入的要是數字!");
+                if (document.myForm.姓名.value == " ")//假如姓名沒有寫
+                {
+                    alert("姓名必填寫!");
+		        }
+                return false;//執行完上一行後跳出
+             }
+              return true;
+      }
+
+
+        function getParient() {
+            //是否有喝酒與抽菸，如果有是各多少
+            var form = document.getElementById("myForm");
+            for (var i = 0; i < form.smoke.length; i++) {
+                if (form.smoke[i].checked) {
+                    x3 = form.smoke[i].value;//為是否有抽菸
+                    x5=form.manysmoke.value;//抽了幾包菸
+                }
+            }
+            for (var i = 0; i < form.wine.length; i++) {
+                if (form.wine[i].checked) {
+                    x4 = form.wine[i].value;//為是否有喝酒
+                    x6=form.manywine.value;//喝了幾瓶酒
+                }
+            }
+            var z1, z2, z3, z4, z5, z6, z7, z8, z9, z10, z11, z12, z13, z14, z15, z16, z17, z18, z19, z20, z21, z22, z23, z24, z25, z26, z27, z28
+            //性別選哪個最後get Patient顯示的
+            if (+document.getElementById("gender").checked == true) {
+                g1 = '女';
+            }
+            else if (+document.getElementById("gender").checked == false) {
+                g1 = '男'
+            }
+            //ex：當id為health1的東西有人勾選，則顯示z1  //多選
+            if (+document.getElementById("health1").checked == true) {
+                z1 = '[health1: 眼睛疲勞、眼睛乾澀] '
+            }
+            //沒人勾選就空白
+            else {
+                z1 = ''
+            }
+            if (+document.getElementById("health2").checked == true) {
+                z2 = '[health2: 頭皮屑、易掉髮]  '
+            }
+            else {
+                z2 = ''
+            }
+            if (+document.getElementById("health3").checked == true) {
+                z3 = '[health3: 疲倦、易生氣]  '
+            }
+            else {
+                z3 = ''
+            }
+            if (+document.getElementById("health4").checked == true) {
+                z4 = '[health4：記憶減退]  '
+            }
+            else {
+                z4 = ''
+            }
+            if (+document.getElementById("health5").checked == true) {
+                z5 = '[health5: 熬夜壓力]  '
+            }
+            else {
+                z5 = ''
+            }
+            if (+document.getElementById("health6").checked == true) {
+                z6 = '[health6: 偏頭痛]  '
+            }
+            else {
+                z6 = ''
+            }
+            if (+document.getElementById("health7").checked == true) {
+                z7 = '[health7: 肝炎]  '
+            }
+            else {
+                z7 = ''
+            }
+            if (+document.getElementById("health8").checked == true) {
+                z8 = '[health8: 過敏性鼻炎]  '
+            }
+            else {
+                z8 = ''
+            }
+            if (+document.getElementById("health9").checked == true) {
+                z9 = '[health9: 青春痘]  '
+            }
+            else {
+                z9 = ''
+            }
+            if (+document.getElementById("health10").checked == true) {
+                z10 = '[health10: 黑斑]  '
+            }
+            else {
+                z10 = ''
+            }
+            if (+document.getElementById("health11").checked == true) {
+                z11 = '[health11: 臉過油]  '
+            }
+            else {
+                z11 = ''
+            }
+            if (+document.getElementById("health12").checked == true) {
+                z12 = '[health12: 濕疹]  '
+            }
+            else {
+                z12 = ''
+            }
+            if (+document.getElementById("health13").checked == true) {
+                z13 = '[health13: 皮膚炎]  '
+            }
+            else {
+                z13 = ''
+            }
+            if (+document.getElementById("health14").checked == true) {
+                z14 = '[health14: 口乾舌燥]  '
+            }
+            else {
+                z14 = ''
+            }
+            if (+document.getElementById("health15").checked == true) {
+                z15 = '[health15: 重口味]  '
+            }
+            else {
+                z15 = ''
+            }
+            if (+document.getElementById("health16").checked == true) {
+                z16 = '[health16: 消化不良]  '
+            }
+            else {
+                z16 = ''
+            }
+            if (+document.getElementById("health17").checked == true) {
+                z17 = '[health17: 脹氣]  '
+            }
+            else {
+                z17 = ''
+            }
+            if (+document.getElementById("health18").checked == true) {
+                z18 = '[health18: 時常打嗝]  '
+            }
+            else {
+                z18 = ''
+            }
+            if (+document.getElementById("health19").checked == true) {
+                z19 = '[health19: 便秘]  '
+            }
+            else {
+                z19 = ''
+            }
+            if (+document.getElementById("health20").checked == true) {
+                z20 = '[health20: 水腫]  '
+            }
+            else {
+                z20 = ''
+            } if (+document.getElementById("health21").checked == true) {
+                z21 = '[health21: 經痛]  '
+            }
+            else {
+                z21 = ''
+            } if (+document.getElementById("health22").checked == true) {
+                z22 = '[health22: 更年期]  '
+            }
+            else {
+                z22 = ''
+            } if (+document.getElementById("health23").checked == true) {
+                z23 = '[health23: 害喜]  '
+            }
+            else {
+                z23 = ''
+            } if (+document.getElementById("health24").checked == true) {
+                z24 = '[health24: 手腳冰冷]  '
+            }
+            else {
+                z24 = ''
+            } if (+document.getElementById("health25").checked == true) {
+                z25 = '[health25: 尿床]  '
+            }
+            else {
+                z25 = ''
+            } if (+document.getElementById("health26").checked == true) {
+                z26 = '[health26: 抽筋]  '
+            }
+            else {
+                z26 = ''
+            } if (+document.getElementById("health27").checked == true) {
+                z27 = '[health27: 頻尿]  '
+            }
+            else {
+                z27 = ''
+            } if (+document.getElementById("health28").checked == true) {
+                z28 = '[health28: 骨質疏鬆]  '
+            }
+            else {
+                z28 = ''
+            }
+            //''裡面的是name("")的裡面是id //按get Parient後顯示的東西
+            alert('姓名：' + document.getElementById("MyName").value + " 生日：" + document.getElementById("birthday").value
+                + '  身分證字號：' + document.getElementById("people").value
+                + '\n性別：' + g1 + '  電話：' + document.getElementById("phone").value
+                + '  行動：' + document.getElementById("telephone").value + '\nE-mail：' + document.getElementById("Email").value
+                + ' 睡眠時間：' + sleepSelect.value + '\n喝酒：' + x4 + '  喝幾瓶酒：' + x6 + '\n抽菸：' + x3 + '  抽幾包菸：' + x5
+                + '\n身高：' + document.getElementById("m").value + '  體重：' + document.getElementById("kg").value
+                + '  BMI：' + document.getElementById("bmi").value + '\n腹圍：' + document.getElementById("Belly").value
+                + '  血壓：' + document.getElementById("Blood").value + '  心跳：' + document.getElementById("Heart").value
+                + '\n皮下脂肪率：' + document.getElementById("fat").value + '  體年齡：' + document.getElementById("old").value
+                + '\n基礎代謝率' + document.getElementById("bmr").value + '  膽固醇：' + document.getElementById("cholesterol").value
+                + '\n高密度脂質：' + document.getElementById("hfat").value + '  低密度脂質：' + document.getElementById("dfat").value
+                + '\nother1：' + document.getElementById("other1").value + 'other2：' + document.getElementById("other2").value
+                + 'other3：' + document.getElementById("other3").value + '\n目前有的健康問題：' + document.getElementById("question1").value
+                + '\n欲改善健康問題：' + document.getElementById("question2").value
+                + '\n' + z1 + '' + z2 + '' + z3 + ' ' + z4 + '' + z5 + '' + z6 + '' + z7
+                + '' + z8 + '' + z9 + '' + z10 + '' + z11 + '' + z12 + '' + z13 + '' + z14
+                + '' + z15 + '' + z16 + '' + z17 + '' + z18 + '' + z19 + '' + z20 + '' + z21
+                + '' + z22 + '' + z23 + '' + z24 + '' + z25 + '' + z26 + '' + z27 + '' + z28);
+        }
+    </script>
+</head>
+
+<body>
+    <form name="myForm" id="myForm" action="http://203.64.84.113/x/RQ_RS.aspx" method="post">
+
+        <center>
+            <h1>簡易營養自我評估紀錄</h1>
+        </center>
+        <h2>一.基本資料</h2><br>
+        姓名：
+        <input type="text" name="姓名" value="" id="MyName" />
+        生日：
+        <input type="text" name="生日" value=" 西元/月/日" id="birthday" style="width:90px" />
+        身分證字號：
+        <input type="text" name="身分證字號" value=" " id="people" style="width:130px" />
+        性別：
+        <input type="radio" name="性別" id="gender" value="女" checked> 女
+        <input type="radio" name="性別" id="gender" value="男"> 男<br><br>
+        電話：
+        <input type="text" name="電話" value="" id="phone" />
+        行動：
+        <input type="text" name="行動" value=" " id="telephone" />
+        E-mail：
+        <input type="text" name="email" value=" " id="Email" /><br>
+
+        <h2>二.生活型態</h2><br>
+        (一)生活習慣：
+        (1)睡眠時間：
+        <select name="睡眠時間" id=sleepSelect>
+            <script>
+                var selectvalue = document.getElementById("sleepSelect");
+                for (i = 0; i < sleepp.length; i++) {
+                    text += "<option value='" + sleepp[i] + "'>" + sleepp[i] + "</option>";
+                }
+                selectvalue.innerHTML = text;
+            </script>
+        </select>小時/天<br>
+
+
+        <pre>
+               (2)抽菸：<label><input name="smoke" type="radio" value="不抽菸"checked>不抽菸</label><label><input name="smoke" type="radio" value="抽菸" >抽菸 </label><label><input type="text" name="有抽菸(包)" value=" " id="manysmoke"style=" width:50px" > 包</label><br>
+               (3)喝酒：<label><input name="wine" type="radio" value="不喝酒" checked>無</label><label><input name="wine" type="radio" value="喝酒">有 </label><label><label><input type="text" name="有喝酒(瓶/週)" value=" "id="manywine"style=" width:50px" /> 瓶/週</label><br>
+        </pre>
+        (二)健康資料：<br><br>
+        身高/體重：
+        <input type="text" name="身高" value="" style=" width:40px" id="m" /> m/
+        <input type="text" name="體重" value="" style=" width:40px" id="kg" />kg、BMI：
+        <input type="text" name="BMI" value=" " style=" width:100px" id="bmi" /><br><br>腹圍：
+        <input type="text" name="腹圍" value=" " style=" width:100px" id="Belly" />cm、
+        血壓： <input type="text" name="血壓" value=" " style=" width:100px" id="Blood" />mmHg、心跳：
+        <input type="text" name="心跳" value=" " style=" width:100px" id="Heart" /><br><br>
+        皮下脂肪率： <input type="text" name="皮下脂肪率" value=" " style=" width:100px" id="fat" />、
+        體年齡：<input type="text" name="體年齡" value=" " style=" width:100px" id="old" />、
+        基礎代謝率：<input type="text" name="基礎代謝率" value=" " style=" width:100px" id="bmr" /><br><br>
+        膽固醇：<input type="text" name="膽固醇" value=" " style=" width:100px" id="cholesterol" />、高密度脂質：
+        <input type="text" name="高密度脂質" value=" " style=" width:100px" id="hfat" />、低密度脂質：
+        <input type="text" name="低密度脂質" value=" " style=" width:100px" id="dfat" /><br><br>
+        其他：
+        <input type="text" name="other1" value=" " style=" width:100px" id="other1" />、
+        <input type="text" name="other2" value=" " style=" width:100px" id="other2" />、
+        <input type="text" name="other3" value=" " style=" width:100px" id="other3" />
+        <h2>三.目前有的健康問題：</h2>
+        <textarea name="目前有的健康問題" cols="30" rows="5" id="question1"></textarea>
+        <h2>四.欲改善健康問題：</h2>
+        <textarea name="欲改善健康問題" cols="30" rows="5" id="question2"></textarea>
+        <h2>五.健康問題(多選)：</h2>
+        <input type="checkbox" value="眼睛疲勞、眼睛乾澀" name="health1" id="health1"> 眼睛疲勞、眼睛乾澀 <br><br>
+        <input type="checkbox" value="頭皮屑、易掉髮" name="health2" id="health2"> 頭皮屑、易掉髮<br><br>
+        <input type="checkbox" value="疲倦、易生氣" name="health3" id="health3"> 疲倦、易生氣<br><br>
+        <input type="checkbox" value="記憶減退" name="health4" id="health4"> 記憶減退<br><br>
+        <input type="checkbox" value="熬夜壓力" name="health5" id="health5"> 熬夜壓力<br><br>
+        <input type="checkbox" value="偏頭痛" name="health6" id="health6"> 偏頭痛<br><br>
+        <input type="checkbox" value=" 肝炎" name="health7" id="health7"> 肝炎<br><br>
+        <input type="checkbox" value="過敏性鼻炎" name="health8" id="health8"> 過敏性鼻炎<br><br>
+        <hr size="2px" align="left" color="black" width="20%">
+        <input type="checkbox" value="青春痘" name="health9" id="health9"> 青春痘<br><br>
+        <input type="checkbox" value="黑斑" name="health10" id="health10"> 黑斑<br><br>
+        <input type="checkbox" value=" 臉過油" name="health11" id="health11"> 臉過油<br><br>
+        <input type="checkbox" value="濕疹" name="health12" id="health12"> 濕疹<br><br>
+        <input type="checkbox" value="皮膚炎" name="health13" id="health13"> 皮膚炎<br><br>
+        <input type="checkbox" value="口乾舌燥" name="health14" id="health14">口乾舌燥<br><br>
+        <input type="checkbox" value="重口味" name="health15" id="health15">重口味<br><br>
+        <input type="checkbox" value="消化不良" name="health16" id="health16">消化不良<br><br>
+        <input type="checkbox" value="脹氣" name="health17" id="health17">脹氣<br><br>
+        <input type="checkbox" value="時常打嗝" name="health18" id="health18">時常打嗝<br><br>
+        <hr size="2px" align="left" color="black" width="20%">
+        <input type="checkbox" value="便祕" name="health19" id="health19">便祕<br><br>
+        <input type="checkbox" value="水腫" name="health20" id="health20">水腫<br><br>
+        <input type="checkbox" value="經痛" name="health21" id="health21">經痛<br><br>
+        <input type="checkbox" value="更年期" name="health22" id="health22">更年期<br><br>
+        <input type="checkbox" value="害喜" name="health23" id="health23">害喜<br><br>
+        <input type="checkbox" value="手腳冰冷" name="health24" id="health24">手腳冰冷<br><br>
+        <hr size="2px" align="left" color="black" width="20%">
+        <input type="checkbox" value="尿床" name="health25" id="health25">尿床<br><br>
+        <input type="checkbox" value="抽筋" name="health26" id="health26">抽筋<br><br>
+        <input type="checkbox" value="頻尿" name="health27" id="health27">頻尿<br><br>
+        <input type="checkbox" value="骨質疏鬆" name="health28" id="health28">骨質疏鬆<br><br>
+
+        <table border="1" id=table1>
+            <tr>
+                <td colspan="5">
+                    <font size="6">
+                        <b>
+                            <center>勾選了哪些「健康問題」</center>
+                        </b>
+                    </font>
+                </td>
+            <tr>
+                
+            </tr>
+        </table><br><br>
+
+        <input type="submit" value="送出" style="width:200px;height:80px;font-size:20px;">
+    </form>
+    <button onclick=" loadPatient()" style="width:200px;height:70px;font-size:25px;"> Load Patient</button>
+    <button onclick="button();" style="width:200px;height:70px;font-size:25px;">資料檢查button</button>
+    <button onclick="getParient()" style="width:200px;height:70px;font-size:25px;"> Get Patient</button><br><br><br><br>
+    <button onclick="BMII()" style="width:200px;height:90px;font-size:25px;">計算BMI</button>
+    <button onclick="DisHealth()" style="width:200px;height:90px;font-size:25px;">顯示健康問題  填入table</button>
+</body>
+</html>
